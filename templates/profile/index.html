@@ -1,0 +1,58 @@
+{% extends 'header.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/profile.css" type="text/css">
+
+<div onclick="logoutUser();" class="row" style="position: absolute; right: 20px; gap: 10px; display: flex; margin-top: 20px;">
+    <div class="pointer" style="padding: 0 10px 0 10px; height: 30px;" id="user-avatar-gradient">Изменить аватар</div>
+    <div class="pointer" style="padding: 0 10px 0 10px; height: 30px;" id="user-avatar-gradient">Выйти</div>
+</div>
+
+<div id="profile" class="block">
+    <div class="avatar">
+        {% if user.avatar %}
+            <img src="{{ user.avatar.url }}">
+        {% else %}
+            <div style="font-size: 160px; border-radius: 50%; width: 250px; height: 250px;" id="user-avatar-gradient">{{ request.user.username.0|title }}</div>
+        {% endif %}
+    </div>
+    <div class="description">
+        <h1 class="gradient-text">{{ user.username }}</h1>
+        <p style="margin-top: -20px;">С 2023 года на A/Q</p>
+        <h1 class="gradient-text">0</h1>
+        <p style="margin-top: -20px;">Вопросов задано</p>
+        <h1 class="gradient-text">0</h1>
+        <p style="margin-top: -20px;">Вопросов получили ответ</p>
+    </div>
+    <br>
+</div>
+
+<div class="max-container">
+    <div class="container row">
+        <div class="title">
+            <h1>Последние вопросы</h1>
+        </div>
+        <div class="elems row">
+
+            {% for _ in '00000000000000000' %}
+            <div class="elem">
+                <div class="title">
+                    <h2>Как сделать что-то своими руками?</h2>
+                </div>
+                <div class="description">Какой-то текст вопроса.</div>
+
+                <div class="themes">
+                    <div class="theme">
+                        <img src="/static/img/icons/topic.png" alt="" class="icon">
+                        10
+                    </div>
+                    <div class="theme">Тег 1</div>
+                    <div class="theme">Длинный тег 2</div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

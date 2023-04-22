@@ -1,0 +1,52 @@
+{% extends 'header.html' %}
+
+{% block content %}
+
+<div class="center" id="main-search">
+    <div>
+        <h1>Поиск вопросов</h1>
+        <input placeholder="Вхождения и темы">
+        <p>Популярные темы</p>
+        <div class="themes">
+            <a href="/questions/create/" class="hidden">
+                <div class="pointer" style="padding: 0 10px 0 10px; height: 30px; margin-right: 10px;" id="user-avatar-gradient">Задать вопрос</div>
+            </a>
+            <div class="theme">Python</div>
+            <div class="theme">Программирование</div>
+            <div class="theme">Мобильная разработка</div>
+            <div class="theme">JavaScript</div>
+            <div class="theme">Лайфхаки</div>
+        </div>
+    </div>
+</div>
+
+<div class="max-container">
+    <div class="container row">
+        <div class="title">
+            <h1>Последние вопросы</h1>
+        </div>
+        <div class="elems row">
+
+            {% for _ in '00000000000000000' %}
+            <div class="elem">
+                <div class="title">
+                    <h2>Как сделать что-то своими руками?</h2>
+                </div>
+                <div class="description">Какой-то текст вопроса.</div>
+
+                <div class="themes">
+                    <div class="theme">
+                        <img src="/static/img/icons/topic.png" alt="" class="icon">
+                        10
+                    </div>
+                    <div class="theme">Тег 1</div>
+                    <div class="theme">Длинный тег 2</div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

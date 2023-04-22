@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.hidden {
+    text-decoration: none;
+    outline: none;
+    color: black;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    max-height: 60px;
+    display: flex;
+    backdrop-filter: blur(10px);
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    z-index: 2;
+    border-bottom: 2px solid rgb(200, 150, 180);
+}
+
+.center {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.themes {
+    display: flex;
+    flex-direction: row;
+    max-width: 350px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.theme {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 5px;
+    border-radius: 50px;
+    background: rgb(150, 150, 210);
+    color: white;
+    margin-bottom: 10px;
+}
+
+.icon {
+    width: 15px;
+    height: 15px;
+    margin: 0 5px 0 5px;
+    cursor: pointer;
+}
+
+.icon-m {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px 0 5px;
+    cursor: pointer;
+}
+
+.notification {
+    position: fixed;
+    z-index: 3;
+    top: 100px;
+    left: 30px;
+    background: white;
+    padding: 0 15px 0 15px;
+    box-shadow: 0px 0px 40px -20px rgba(0,0,0,1);
+    border-radius: 15px;
+    transition: 1s;
+    max-width: 300px;
+    left: -500px;
+}
+
+#user-avatar-gradient {
+    background: hsla(266, 75%, 55%, 1);
+    background: linear-gradient(90deg, hsla(266, 75%, 55%, 1) 0%, hsla(340, 47%, 77%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(266, 75%, 55%, 1) 0%, hsla(340, 47%, 77%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(266, 75%, 55%, 1) 0%, hsla(340, 47%, 77%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#8338E3", endColorstr="#E0A9BB", GradientType=1 );
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-weight: 900;
+}
+
+.red-bg {
+    background: rgb(200, 100, 100);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.elems {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.elems > .elem {
+    padding: 10px;
+    max-width: 300px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.elems > .elem:hover {
+    background: rgb(230, 230, 230);
+    border-radius: 15px;
+}
+
+.max-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 70%;
+}
+
+input, textarea {
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    outline: none;
+    border: 2px solid rgb(150, 150, 250);
+    background: rgb(255, 245, 245);
+    border-radius: 10px;
+    transition: 0.5s;
+    font-size: 20px;
+    max-width: 450px;
+}
+
+textarea {
+    min-height: 200px;
+}
+
+input:focus, textarea:focus {
+    border: 2px solid rgb(100, 100, 150);
+    box-shadow: 0px 0px 40px -20px rgba(0,0,0,1);
+}
+
+.avatar img {
+    max-width: 250px;
+    filter: drop-shadow(0 0 0.75rem rgba(150, 150, 150, 0.5));
+    z-index: 1;
+    max-height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#main-search {
+    background: hsla(332, 53%, 82%, 1);
+    background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E9B7CE", endColorstr="#D3F3F1", GradientType=1 );
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+.gradient-text {
+    background-color: red;
+    background-image: linear-gradient(90deg, #E3535D, #2AA5A0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-radius: 15px;
+    filter: drop-shadow(0 0 0 1rem rgba(100, 100, 100, 0.5));
+}
+
+.block {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.col {
+    flex-direction: column;
+    margin: 20px;
+}
+
+.row {
+    flex-direction: row;
+}
+
+header > .logo {
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+header > .navbar {
+    flex-direction: row;
+    margin-left: auto;
+}
+
+.elem {
+
+}
