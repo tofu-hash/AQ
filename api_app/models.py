@@ -24,7 +24,7 @@ class Theme(models.Model):
 class Question(models.Model):
     author = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name='question_author')
 
-    best_answer = models.ForeignKey('Answer', null=True, on_delete=models.CASCADE, related_name='best_answer')
+    best_answer = models.ForeignKey('Answer', blank=True, null=True, on_delete=models.CASCADE, related_name='best_answer')
 
     themes = models.ManyToManyField('Theme', related_name='question_themes')
 

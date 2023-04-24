@@ -53,7 +53,7 @@ class GetQuestionSerializer(serializers.ModelSerializer):
 
 
 class CreateQuestionSerializer(serializers.ModelSerializer):
-    themes = serializers.CharField(source='theme_set', max_length=250)
+    themes = serializers.CharField(max_length=200)
 
     def create(self, validated_data):
         question = Question()

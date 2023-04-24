@@ -3,9 +3,9 @@
 {% block content %}
 <link rel="stylesheet" href="/static/css/profile.css" type="text/css">
 
-<div onclick="logoutUser();" class="row" style="position: absolute; right: 20px; gap: 10px; display: flex; margin-top: 20px;">
+<div class="row" style="position: absolute; right: 20px; gap: 10px; display: flex; margin-top: 20px;">
     <div class="pointer" style="padding: 0 10px 0 10px; height: 30px;" id="user-avatar-gradient">Изменить аватар</div>
-    <div class="pointer" style="padding: 0 10px 0 10px; height: 30px;" id="user-avatar-gradient">Выйти</div>
+    <div onclick="logoutUser();" class="pointer" style="padding: 0 10px 0 10px; height: 30px;" id="user-avatar-gradient">Выйти</div>
 </div>
 
 <div id="profile" class="block">

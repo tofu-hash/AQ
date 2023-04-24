@@ -54,6 +54,17 @@ class CreateQuestionView(CustomCreateAPIView):
     serializer_class = CreateQuestionSerializer
 
 
-class GetCurrentUserQuestions(ListAPIView):
-    queryset = Question.objects.all()
-    serializer_class = GetQuestionSerializer
+class GetCurrentUserQuestions(APIView):
+    def get(self, request, *args, **kwargs):
+        raw_queryset = Question.objects.filter(author=request.user)
+        queryset = []
+
+        for model in raw_queryset:
+            themes = [{'id': _.pk, 'name': _.name} for _ in model.themes.all()]
+            data = {
+                'title': model.title,
+                'description': model.description,
+                'themes': themes
+            }
+            queryset.append(data)
+        return CustomResponse(queryset).good()

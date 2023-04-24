@@ -117,8 +117,9 @@ async function getCurrentUserQuestions() {
 
     } else {
         let responseMessage = '';
-        for (let item in result) {
-            responseMessage += result[item][0] + ' (' + item + ')<br>';
+        for (let rawItem in result['data']) {
+            let item = result['data'][rawItem];
+            responseMessage += item;
         }
         showNotification(responseMessage);
     }

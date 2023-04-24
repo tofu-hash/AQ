@@ -8,9 +8,16 @@
         <input placeholder="Вхождения и темы">
         <p>Популярные темы</p>
         <div class="themes">
+            {% if user.is_authenticated %}
             <a href="/questions/create/" class="hidden">
                 <div class="pointer" style="padding: 0 10px 0 10px; height: 30px; margin-right: 10px;" id="user-avatar-gradient">Задать вопрос</div>
             </a>
+            {% else %}
+            <a href="/accounts/login/" class="hidden">
+                <div class="pointer" style="padding: 0 10px 0 10px; height: 30px; margin-right: 10px;" id="user-avatar-gradient">Задать вопрос</div>
+            </a>
+            {% endif %}
+
             <div class="theme">Python</div>
             <div class="theme">Программирование</div>
             <div class="theme">Мобильная разработка</div>
